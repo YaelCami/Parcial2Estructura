@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.parcial2.Estructuras;
+package co.edu.uniquindio.poo.parcial2.estructuras;
 
 public class Cola<T> {
     private NodoCola<T> frente;

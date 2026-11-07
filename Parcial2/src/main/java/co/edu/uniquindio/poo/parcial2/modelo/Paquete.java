@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.parcial2.Modelo;
+package co.edu.uniquindio.poo.parcial2.modelo;
 
 public class Paquete {
 
@@ -38,6 +38,6 @@ public class Paquete {
 
     @Override
     public String toString() {
-        return "Paquete " + codigo + ". Tipo: " + tipo + "Peso: " + peso + "KG.";
+        return "Paquete " + codigo + ". Tipo: " + tipo + ". Peso: " + peso + "KG.";
     }
 }

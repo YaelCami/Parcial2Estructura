@@ -1,9 +1,8 @@
-package co.edu.uniquindio.poo.parcial2.Logica;
+package co.edu.uniquindio.poo.parcial2.logica;
 
-import co.edu.uniquindio.poo.parcial2.Estructuras.Cola;
-import co.edu.uniquindio.poo.parcial2.Modelo.Paquete;
-import co.edu.uniquindio.poo.parcial2.Modelo.TipoEntrega;
-import javafx.scene.SubScene;
+import co.edu.uniquindio.poo.parcial2.estructuras.Cola;
+import co.edu.uniquindio.poo.parcial2.modelo.Paquete;
+import co.edu.uniquindio.poo.parcial2.modelo.TipoEntrega;
 
 public class GestorPaquetes {
     private int capacidadRestante;
@@ -46,6 +45,10 @@ public class GestorPaquetes {
         return procesar(pendientes, seleccionados, tipo, capacidad, n - 1);
     }
 
+    public void mostrar(Cola<Paquete> cola) {
+        mostrar(cola, cola.getTamanio());
+    }
+
     public void mostrar(Cola<Paquete> cola, int n) {
         if (n == 0) {
             return;
@@ -58,5 +61,31 @@ public class GestorPaquetes {
 
     public int getCapacidadRestante() {
         return capacidadRestante;
+    }
+
+    public void probarEjercicio3() {
+        Cola<Paquete> pendientes = new Cola<>();
+        pendientes.encolar(new Paquete("P1", TipoEntrega.NORMAL, 4));
+        pendientes.encolar(new Paquete("P2", TipoEntrega.URGENTE, 7));
+        pendientes.encolar(new Paquete("P3", TipoEntrega.NORMAL, 3));
+        pendientes.encolar(new Paquete("P4", TipoEntrega.URGENTE, 5));
+        pendientes.encolar(new Paquete("P5", TipoEntrega.NORMAL, 6));
+        pendientes.encolar(new Paquete("P6", TipoEntrega.URGENTE, 4));
+        pendientes.encolar(new Paquete("P7", TipoEntrega.NORMAL, 2));
+
+        System.out.println("=== EJERCICIO 3 ===");
+        System.out.println("Cola inicial (frente -> final):");
+        mostrar(pendientes);
+
+        System.out.println("\nEvaluacion de paquetes (capacidad 14 kg):");
+        Cola<Paquete> seleccionados = seleccionarPaquetes(pendientes, 14);
+
+        System.out.println("\nCola retornada:");
+        mostrar(seleccionados);
+
+        System.out.println("\nPendientes despues de la seleccion:");
+        mostrar(pendientes);
+
+        System.out.println("\nCapacidad disponible: " + getCapacidadRestante() + " kg");
     }
 }
