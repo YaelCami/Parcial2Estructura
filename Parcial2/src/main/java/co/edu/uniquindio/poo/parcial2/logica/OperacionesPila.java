@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.parcial2.logica;
 
-import co.edu.uniquindio.poo.parcial2.Pila;
+import co.edu.uniquindio.poo.parcial2.Estructuras.Pila;
 
 public class OperacionesPila {
 

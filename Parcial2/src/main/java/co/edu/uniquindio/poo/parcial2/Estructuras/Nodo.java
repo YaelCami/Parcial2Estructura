@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.parcial2;
+package co.edu.uniquindio.poo.parcial2.Estructuras;
 
 public class Nodo<T> {
     T dato;
